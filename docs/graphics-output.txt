@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: all sixteen classes preserve their authored color, roughness and metal textures
+PASS: every unit and boss imports the 512-pixel surface atlas and normal detail with mipmap filtering
+PASS: cloth and polished metal address different regions of the material atlas
+PASS: each complete character remains one mesh surface including mounted knights
+PASS: castle batches retain albedo and normal maps with world-scaled stone detail
+PASS: pause freezes cloth wind and new impact effects
+PASS: Resume advances cloth and impacts from the frozen point
+PASS: repeated impacts cannot grow the effect pool
+PASS: all spark, chip and dust slots return to the pool after fading
+PASS: troop contact shadows share their mesh material
+GRAPHICS COMPLETE failures=0

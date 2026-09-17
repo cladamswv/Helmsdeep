@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: new installs default to 35 percent music and the existing effects level
+PASS: audio preferences save independently of the campaign
+PASS: both volume levels and mute survive a new settings instance
+PASS: out-of-range or malformed preference values fall back safely
+PASS: the medieval soundtrack starts at the saved/default music gain
+PASS: compressed stereo music is configured as an 80-second loop
+PASS: Godot decodes audible music across the loop boundary without clipping
+PASS: Settings pauses combat and scouting while music remains adjustable
+PASS: the complete audio panel fits the landscape safe area
+PASS: both sliders change their actual playback buses immediately
+PASS: effects preview is audible while the battle is paused
+PASS: all three visible death-test buttons play their own family while gameplay stays paused
+PASS: Mute all audio silences both buses
+PASS: a muted death preview explains which setting to change
+PASS: zero music volume leaves battle effects enabled
+PASS: closing Settings saves both levels and resumes a previously running battle
+PASS: closing Settings preserves a pre-existing pause
+PASS: leaving the app suspends music and interface audio
+PASS: returning restores music while combat remains paused
+PASS: retrying a wave does not reset audio preferences
+AUDIO SETTINGS COMPLETE failures=0

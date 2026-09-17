@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/boss_gatebreaker.gltf" id="2"]
+[ext_resource type="Script" path="res://scripts/data/boss_data.gd" id="3"]
+
+[sub_resource type="Resource" id="Boss"]
+script = ExtResource("3")
+special_kind = "quake"
+warning = "MAUL SLAM"
+special_interval = 10.0
+special_damage = 165.0
+structure_damage = 320.0
+bounty = 750
+
+[resource]
+script = ExtResource("1")
+defeat_voice="ogre"
+id = "boss_gatebreaker"
+title = "The Gatebreaker"
+category = "heavy"
+visual_scale = 1.0
+hp = 6200
+damage = 160.0
+interval = 2.6
+attack_range = 1.6
+speed = 1.05
+armor = 0.2
+spacing = 3.3
+hit_time = 1.2
+structure_damage_multiplier = 2.4
+splash_radius = 2.2
+splash_fraction = 0.45
+splash_targets = 3
+knockback = 0.5
+body_radius = 1.25
+impact_height = 3.3
+model = ExtResource("2")
+boss = SubResource("Boss")

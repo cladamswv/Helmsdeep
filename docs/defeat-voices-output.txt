@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: ordinary hits do not trigger defeat voices
+PASS: a fatal defender hit triggers one human oof with the falling animation
+PASS: defeat playback uses the actual adjustable effects bus
+PASS: Pause freezes a voiced fall and blocks new battle voices
+PASS: Resume continues the same defeat sound
+PASS: a fallen siege ogre selects a deep grunt
+PASS: an orc uses a rough creature voice rather than a human voice
+PASS: mounted and giant characters retain their rider's voice identity
+PASS: a simultaneous crowd defeat cannot queue a wall of grunts or grow the voice pool
+PASS: human, orc and ogre deaths can be heard together without suppressing another family
+PASS: voices retain a clear gain while impacts and music duck around them
+PASS: the normal music and impact mix returns after the voices end
+PASS: Settings can preview a real ogre grunt while battle deaths remain paused
+PASS: closing the preview stops it without resuming the battle
+PASS: repeated human defeats rotate through distinct original clips
+PASS: backgrounding suspends voices and suppresses new cues
+PASS: zero effects volume disables defeat voices without altering music
+PASS: Mute all audio also suppresses defeat voices
+PASS: all nine short mono voices decode audibly without clipped samples
+VOICE OUTPUT frames=12288 rms=0.34239988141332 peak=0.69865810871124
+PASS: a death voice reaches the actual final audio mix at a clear unclipped level
+PASS: three simultaneous voice families stay audible below the final output ceiling
+PASS: attacker damage increases while defender damage and normal wave scaling keep their separate rules
+PASS: late cavalry charges gain the attack increase without accidental extra growth scaling
+DEFEAT VOICES COMPLETE failures=0

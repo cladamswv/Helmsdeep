@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/enemy_spearman.gltf" id="2"]
+[resource]
+script=ExtResource("1")
+defeat_voice="orc"
+id="enemy_spearman"
+title="Orc Impaler"
+cost=0
+hp=235.0
+damage=30.0
+interval=1.2
+attack_range=2.5
+speed=2.45
+armor=0
+ranged=false
+category="infantry"
+spacing=0.88
+anti_cavalry=2
+charge_damage=0
+model=ExtResource("2")

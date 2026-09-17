@@ -1,0 +1,12 @@
+{
+  "title": "The Valley Watch",
+  "seconds": 80.0,
+  "time_signature": "6/8",
+  "quarter_note_bpm": 72,
+  "sample_rate": 44100,
+  "channels": 2,
+  "peak_dbfs": -7.247458174191172,
+  "rms_dbfs": -20.176633803169175,
+  "loop_seam_step": 0.0005368321629427714,
+  "source": "Original written score and original synthesis; no external samples."
+}

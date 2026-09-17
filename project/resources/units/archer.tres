@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/archer.gltf" id="2"]
+[resource]
+script=ExtResource("1")
+id="archer"
+title="Archer"
+cost=60
+hp=85.0
+damage=21.0
+interval=1.25
+attack_range=15.0
+speed=0.0
+armor=0
+ranged=true
+heavy_target_bias=0.55
+category="ranged"
+spacing=0.6
+anti_cavalry=1
+charge_damage=0
+model=ExtResource("2")

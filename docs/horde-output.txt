@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: wave 44 has more attackers and at least five distinct threats
+PASS: the first siege ogre arrives at wave 12, after basic counters
+PASS: shielded orcs and wargs have staged introductions
+PASS: later reinforcements arrive as a five-lane formation
+PASS: older checkpoints retain the original in-progress spawn cadence
+PASS: knights can pursue hunters firing beyond the old 12-metre cutoff
+PASS: mounted pursuit remains bounded before the enemy deployment road
+PASS: ogre geometry is visibly larger than an ordinary orc
+PASS: ogre damage lands on the heavy club's animated contact frame
+PASS: Ironshield resistance is applied by actual arrow impacts, while melee bypasses it
+PASS: archers account for shields when reserving damage and choosing targets
+PASS: ogre windup gives an observable warning before structure damage
+PASS: a landed club deals the configured 2.5-times structure damage
+PASS: the heavy club retains its follow-through instead of snapping to idle at contact
+PASS: club splash damages only two additional nearby ground defenders
+PASS: pooled dust begins transparent at its intended initial size, without a first-frame flash
+PASS: dust fades in gradually and sparks do not add bright emission
+PASS: camera precision and animated mesh bounds are configured to reduce flicker
+PASS: all old enemy IDs and new horde units validate in the existing save format
+PASS: horde models and health restore from a saved battle
+HORDE COMPLETE failures=0

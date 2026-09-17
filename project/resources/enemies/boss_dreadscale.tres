@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/boss_dreadscale.gltf" id="2"]
+[ext_resource type="Script" path="res://scripts/data/boss_data.gd" id="3"]
+
+[sub_resource type="Resource" id="Boss"]
+script = ExtResource("3")
+special_kind = "tail"
+warning = "TAIL SWEEP"
+special_interval = 9.0
+special_damage = 150.0
+structure_damage = 260.0
+radius = 4.6
+knockback = 1.2
+bounty = 1250
+
+[resource]
+script = ExtResource("1")
+defeat_voice="ogre"
+id = "boss_dreadscale"
+title = "Dreadscale Rider"
+category = "cavalry"
+visual_scale = 1.0
+hp = 9600
+damage = 160.0
+interval = 2.6
+attack_range = 1.5
+speed = 1.4
+armor = 0.24
+spacing = 4.8
+hit_time = 1.1
+structure_damage_multiplier = 1.9
+charge_damage = 280.0
+charge_speed_multiplier = 1.5
+charge_knockback = 1.1
+body_radius = 2.15
+impact_height = 2.6
+model = ExtResource("2")
+boss = SubResource("Boss")

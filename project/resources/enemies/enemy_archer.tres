@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/enemy_archer.gltf" id="2"]
+[resource]
+script=ExtResource("1")
+defeat_voice="orc"
+id="enemy_archer"
+title="Orc Hunter"
+cost=0
+hp=95.0
+damage=19.0
+interval=1.55
+attack_range=11.0
+speed=2.4
+armor=0
+ranged=true
+category="ranged"
+spacing=0.88
+anti_cavalry=1
+charge_damage=0
+model=ExtResource("2")

@@ -1,0 +1,83 @@
+name: Build Castlehold Android
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+      - name: Install Android packages
+        run: sdkmanager "platform-tools" "build-tools;35.0.1" "platforms;android-35"
+      - name: Download pinned Godot and export templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/castlehold-godot" "$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          curl --http1.1 --fail --location --retry 5 --retry-all-errors --retry-delay 3 --connect-timeout 30 'https://downloads.godotengine.org/?version=4.7.2&flavor=stable&slug=linux.x86_64.zip' -o "$RUNNER_TEMP/castlehold-godot/editor.zip"
+          unzip -q "$RUNNER_TEMP/castlehold-godot/editor.zip" -d "$RUNNER_TEMP/castlehold-godot"
+          chmod +x "$RUNNER_TEMP/castlehold-godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "$RUNNER_TEMP/castlehold-godot" >> "$GITHUB_PATH"
+          curl --http1.1 --fail --location --retry 5 --retry-all-errors --retry-delay 3 --connect-timeout 30 'https://downloads.godotengine.org/?version=4.7.2&flavor=stable&slug=export_templates.tpz' -o "$RUNNER_TEMP/castlehold-godot/templates.tpz"
+          unzip -q "$RUNNER_TEMP/castlehold-godot/templates.tpz" 'templates/android_debug.apk' 'templates/android_release.apk' -d "$RUNNER_TEMP/castlehold-godot"
+          cp "$RUNNER_TEMP/castlehold-godot/templates/"*.apk "$HOME/.local/share/godot/export_templates/4.7.2.stable/"
+      - name: Import and integration tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --editor --import 2>&1 | tee import.log
+          ! grep -E 'SCRIPT ERROR|Parse Error|Failed to load' import.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/integration.gd -- --test 2>&1 | tee tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/camera_and_fortress.gd -- --test 2>&1 | tee camera-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' camera-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/graphics.gd -- --test 2>&1 | tee graphics-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' graphics-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/audio_settings.gd -- --test 2>&1 | tee audio-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' audio-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/battle_speed.gd -- --test 2>&1 | tee battle-speed-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' battle-speed-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/defeat_voices.gd -- --test 2>&1 | tee defeat-voice-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' defeat-voice-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/horde.gd -- --test 2>&1 | tee horde-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' horde-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/ogre_elites.gd -- --test 2>&1 | tee ogre-elites-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' ogre-elites-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/bosses.gd -- --test 2>&1 | tee boss-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' boss-tests.log
+      - name: Continuous siege and endurance tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/continuous_siege.gd -- --test 2>&1 | tee siege-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' siege-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/siege_endurance.gd -- --test 2>&1 | tee endurance-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' endurance-tests.log
+          Godot_v4.7.2-stable_linux.x86_64 --headless --path project --script ../tests/siege_endurance.gd -- --test --archers-only 2>&1 | tee archer-policy-tests.log
+          ! grep -E 'SCRIPT ERROR|FAIL:' archer-policy-tests.log
+      - name: Configure SDK and debug signing
+        shell: bash
+        run: |
+          python3 tools/configure_android.py
+          mkdir -p build
+          keytool -genkeypair -keystore "$RUNNER_TEMP/castlehold-debug.keystore" -storepass android -alias androiddebugkey -keypass android -dname "CN=Castlehold Debug" -keyalg RSA -keysize 2048 -validity 10000
+      - name: Export debug APK
+        env:
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ runner.temp }}/castlehold-debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+        run: Godot_v4.7.2-stable_linux.x86_64 --headless --path project --export-debug Android ../build/Castlehold-debug.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Castlehold-Android-debug
+          path: build/Castlehold-debug.apk
+          if-no-files-found: error

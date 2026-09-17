@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SIM wave=20 gold=2747 army={ "archer": 30, "swordsman": 5, "spearman": 0.0, "knight": 0.0 } keep=5000.0
+BOSS WAVE 25 army={ "archer": 30, "swordsman": 5, "spearman": 0.0, "knight": 0.0 } gate=2200.0 gold=4239
+BOSS DEFEATED boss_gatebreaker wave=27 elapsed=440.500000000066 gate=978.60416 gold=5095 army={ "archer": 30, "swordsman": 0, "spearman": 0.0, "knight": 0.0 }
+SIM wave=40 gold=8134 army={ "archer": 30, "swordsman": 0, "spearman": 0.0, "knight": 0.0 } keep=5000.0
+BOSS WAVE 50 army={ "archer": 30, "swordsman": 0, "spearman": 0.0, "knight": 0.0 } gate=1917.82272 gold=10933
+BOSS SURVIVING boss_dreadscale hp=4636.44000000007 position=(-3.56326, 0.0, 3.036338)
+ENDURANCE result=defeat wave=55 simulated_seconds=902.849999999727 max_active=76 max_nodes_between_cleanup=87 casualties=181 repair_gold=4211 minimum_gate_hp=0.0
+PASS: unsupported archer stacking cannot coast through the horde

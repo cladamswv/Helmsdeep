@@ -1,0 +1,8 @@
+project/.godot/
+build/
+*.keystore
+*.jks
+.env
+__pycache__/
+
+docs/fortress-geometry-review.json

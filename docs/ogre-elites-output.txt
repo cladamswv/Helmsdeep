@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: the shaman and mounted ogre load their complete articulated rigs
+PASS: cast and axe contact align with their authored animation timing
+PASS: the projectile muzzle attaches to the actual animated staff hand
+PASS: the ember follows the casting gesture above the battlefield
+PASS: the shaman visibly winds up before launching or dealing damage
+PASS: cast contact launches a fireball instead of an arrow or instant damage
+PASS: fireballs start at the animated staff ember
+PASS: a fireball visibly travels before its impact
+PASS: Pause freezes fireball flight, staff flame phase and the casting animation
+PASS: Resume continues the same projectile and staff effect
+PASS: stronger direct fireball damage lands once on arrival with armor applied
+PASS: a returned projectile cannot damage its target again
+PASS: fire magic bypasses arrow-only shield resistance, while retaining armor
+PASS: target reservations distinguish blocked arrows from incoming magic
+PASS: the blast hurts at most two nearby secondary defenders at reduced damage
+PASS: ground splash cannot pass through battlements or hit the caster's allies
+PASS: crowded fireball launches stay inside the fixed 16-projectile pool
+PASS: clearing the battlefield cancels every pending pooled impact
+PASS: an already launched fireball continues after its caster falls
+PASS: a removed target safely releases its projectile slot
+PASS: spearmen retain their full anti-cavalry counter against the giant warthog
+PASS: the warthog accelerates once it has room to build its charge
+PASS: the rider's axe and charge share a readable contact windup
+PASS: stronger charge contact applies once and knocks the defender back
+PASS: the charge cannot repeat before its recovery ends
+PASS: shamans enter at wave 18 and giant warthogs at wave 25
+PASS: late assaults combine two shamans, a rider and a foot ogre
+PASS: elite introductions replace existing slots apart from explicitly scheduled milestone bosses
+PASS: both elites fit the existing versioned checkpoint format
+PASS: retry restores elite health, charge state and staff attachment without stale fireballs
+PASS: original cast and fire impact sounds load into the adjustable effects system
+OGRE ELITES COMPLETE failures=0

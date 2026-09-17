@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: all 100 assaults start and finish exactly once
+PASS: every assault lasts 10–15 simulated seconds
+PASS: every reinforcement gap lasts 3–5 simulated seconds
+PASS: no scheduled attackers are lost across wave boundaries
+PASS: no wave 101 is generated
+PASS: enemy limit defers reinforcements instead of discarding them
+PASS: a deferred formation uses only the free enemy slots
+PASS: pause freezes the wave clock and troop movement
+PASS: pause freezes projectiles and skeletal animations
+PASS: recruitment remains usable while paused
+PASS: closing Credits preserves an existing pause
+PASS: Resume continues the same attack without resetting it
+PASS: 100th assault does not award victory while enemies survive
+PASS: clearing the final attackers awards 100-wave victory
+PASS: completed siege is a valid resumable save
+CONTINUOUS SIEGE COMPLETE failures=0

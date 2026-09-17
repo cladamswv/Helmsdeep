@@ -1,0 +1,38 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: automatic siege starts with 12 defenders and a short countdown
+PASS: 100 waves configured
+PASS: skeletal bow-release animation imported
+PASS: authored medieval material colors enabled
+PASS: recruitment charges the displayed cost once
+PASS: recruitment neither teleports nor heals existing troops
+PASS: mounted knight can be recruited
+PASS: articulated horse locomotion imports
+PASS: spearman has a functional cavalry counter
+PASS: archers spread fire away from enemies already covered by incoming arrows
+PASS: recruitment cannot overspend
+PASS: 35 percent cumulative repair allowance per wave
+PASS: keep can be repaired during the continuous siege
+PASS: timed assault ends and awards gold while enemies remain
+PASS: enemies continue fighting through gaps
+PASS: short gap does not spawn reinforcements
+PASS: next wave starts automatically without a Begin button
+PASS: new wave refreshes repair allowance
+PASS: survivors recover between waves without being recreated
+PASS: continuous checkpoint validates
+PASS: corrupt checkpoint rejected
+PASS: out-of-range saved wave rejected
+PASS: mismatched roster and saved soldiers rejected
+PASS: atomic version 2 save writes
+PASS: wave queue and live army survive a save round trip
+PASS: backup checkpoint is created before replacement
+PASS: corrupted primary save falls back to a valid backup
+PASS: restore preserves wounds and castle damage
+PASS: gate physically breaches
+PASS: repair does not teleport an intruder back outside
+PASS: keep destruction triggers defeat
+PASS: retry restores saved battle and pauses for planning
+PASS: defeated soldier immediately leaves active combat lists
+PASS: defeated mesh is freed after its fall animation
+PASS: intentional casualties cannot increase net army wealth
+INTEGRATION COMPLETE failures=0

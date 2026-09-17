@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/knight.gltf" id="2"]
+[resource]
+script=ExtResource("1")
+id="knight"
+title="Knight"
+cost=260
+hp=600.0
+damage=64.0
+interval=1.25
+attack_range=2.7
+speed=3.6
+armor=0.25
+ranged=false
+category="cavalry"
+spacing=1.45
+anti_cavalry=1
+charge_damage=150
+ranged_target_bias=0.32
+pursuit_limit=20.0
+model=ExtResource("2")

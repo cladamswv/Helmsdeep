@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/unit_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/characters/ogre_warthog.gltf" id="2"]
+[resource]
+script=ExtResource("1")
+defeat_voice="ogre"
+id="ogre_warthog"
+title="Ogre Warthog Rider"
+hp=850.0
+damage=60.0
+interval=2.1
+hit_time=0.85
+attack_range=2.4
+speed=2.5
+armor=0.15
+category="cavalry"
+spacing=1.85
+charge_damage=130.0
+charge_speed_multiplier=1.35
+charge_knockback=0.65
+structure_damage_multiplier=1.25
+model=ExtResource("2")

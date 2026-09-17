@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SIM wave=20 gold=43 army={ "archer": 27, "swordsman": 14, "spearman": 6, "knight": 1 } keep=5000.0
+BOSS WAVE 25 army={ "archer": 30, "swordsman": 15, "spearman": 6, "knight": 3 } gate=2200.0 gold=248
+BOSS DEFEATED boss_gatebreaker wave=27 elapsed=438.850000000066 gate=2200.0 gold=796 army={ "archer": 30, "swordsman": 15, "spearman": 6, "knight": 4 }
+SIM wave=40 gold=1601 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 } keep=5000.0
+BOSS WAVE 50 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 } gate=2200.0 gold=1307
+BOSS DEFEATED boss_dreadscale wave=53 elapsed=865.64999999976 gate=2200.0 gold=1321 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 }
+SIM wave=60 gold=135 army={ "archer": 30, "swordsman": 29, "spearman": 6, "knight": 4 } keep=5000.0
+BOSS WAVE 75 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 } gate=2200.0 gold=1974
+BOSS DEFEATED boss_ashcaller wave=76 elapsed=1256.4999999994 gate=2200.0 gold=4152 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 }
+SIM wave=80 gold=5173 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 8 } keep=5000.0
+BOSS WAVE 100 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 7 } gate=2200.0 gold=167
+SIM wave=100 gold=167 army={ "archer": 30, "swordsman": 30, "spearman": 6, "knight": 7 } keep=5000.0
+BOSS DEFEATED boss_ironjaw wave=100 elapsed=1698.649999999 gate=979.28 gold=2500 army={ "archer": 26, "swordsman": 0, "spearman": 0, "knight": 0 }
+ENDURANCE result=complete wave=100 simulated_seconds=1714.74999999899 max_active=115 max_nodes_between_cleanup=128 casualties=268 repair_gold=193 minimum_gate_hp=979.28
+PASS: mixed recruitment and repair policy completes 100 continuous waves

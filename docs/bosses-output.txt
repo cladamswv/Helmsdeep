@@ -1,0 +1,46 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS: exactly one distinct boss arrives at 25, 50, 75 and 100
+PASS: bosses supplement rather than replace their supporting army
+PASS: boss_gatebreaker has giant skinned geometry on one material surface
+PASS: boss_gatebreaker contact is synchronized to the authored attack clip
+PASS: boss_gatebreaker receives the attack boost without ordinary wave inflation
+MAUL CONTACT (0.337784, 0.886461, -3.283889)
+PASS: the actual maul head reaches ground-contact height on its damage frame
+PASS: boss_dreadscale has giant skinned geometry on one material surface
+PASS: boss_dreadscale contact is synchronized to the authored attack clip
+PASS: boss_dreadscale receives the attack boost without ordinary wave inflation
+PASS: boss_ashcaller has giant skinned geometry on one material surface
+PASS: boss_ashcaller contact is synchronized to the authored attack clip
+PASS: boss_ashcaller receives the attack boost without ordinary wave inflation
+PASS: boss_ironjaw has giant skinned geometry on one material surface
+PASS: boss_ironjaw contact is synchronized to the authored attack clip
+PASS: boss_ironjaw receives the attack boost without ordinary wave inflation
+PASS: maul slam displays a warning before any damage
+PASS: the boss health display also names its anticipated attack
+PASS: pause freezes boss warning, animation and damage
+PASS: the shockwave caps casualties at five targets and respects height and faction
+PASS: a slam applies once, then the boss visibly recovers
+PASS: the oversized maul cannot damage the gate before contact
+PASS: a completed Gatebreaker strike applies the stronger attack to persistent gate damage
+PASS: spearmen counter the giant lizard cavalry
+PASS: melee contact accounts for the giant mount's physical size
+PASS: arrows aim at the giant body rather than its feet
+PASS: Ashcaller advances into the visible firing line before casting
+PASS: Ashcaller's ember attaches to the tip of his giant staff
+PASS: firestorm launches a traveling projectile before applying damage
+PASS: firestorm keeps its warned location instead of chasing troops at impact
+PASS: the stronger firestorm lands on arrival in its marked area
+PASS: Ironjaw's first health threshold queues four reinforcements at the enemy road
+PASS: giant health and used summon thresholds persist in a valid version-two save
+PASS: restoring a checkpoint cannot repeat a consumed reinforcement roar
+PASS: Ironjaw has a second, bounded reinforcement threshold
+PASS: boss reinforcements obey the same 84-enemy performance cap
+PASS: wave 100 cannot end while Ironjaw is still alive
+PASS: a defeated boss awards its bounty exactly once
+PASS: defeating the final boss and its army completes the siege
+PASS: a boss checkpoint remains valid during its windup
+PASS: retry restores the same warning and special-attack pose
+PASS: corrupted boss state is rejected instead of creating unbounded reinforcements
+PASS: original giant sounds use the adjustable effects channel
+BOSSES COMPLETE failures=0
