@@ -16,8 +16,23 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v4
+        with:
+          # Avoid the action's automatic package update; install exact packages below.
+          cmdline-tools-version: 12266719
+          packages: ''
       - name: Install Android packages
-        run: sdkmanager "platform-tools" "build-tools;35.0.1" "platforms;android-35"
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdk_root="${ANDROID_SDK_ROOT:-${ANDROID_HOME}}"
+          yes | sdkmanager --sdk_root="$sdk_root" --licenses >/dev/null || true
+          for attempt in 1 2 3; do
+            if sdkmanager --sdk_root="$sdk_root" "platform-tools" "build-tools;35.0.1" "platforms;android-35"; then
+              break
+            fi
+            if [ "$attempt" = 3 ]; then exit 1; fi
+            sleep 5
+          done
       - name: Download pinned Godot and export templates
         shell: bash
         run: |
